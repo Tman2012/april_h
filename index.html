@@ -10,6 +10,15 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script type="text/javascript">
+      window.openCalendly = function(event) {
+        if (window.Calendly) {
+          event.preventDefault();
+          Calendly.initPopupWidget({
+            url: 'https://calendly.com/arrivamexico/demo-consultation?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0d0d0d&text_color=f2f2f2&primary_color=e8581f'
+          });
+        }
+      };
+
       window.onload = function() {
         Calendly.initBadgeWidget({
           url: 'https://calendly.com/arrivamexico/demo-consultation?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0d0d0d&text_color=f2f2f2&primary_color=e8581f',
@@ -742,9 +751,9 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#who">Who I Help</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#booking">Book</a></li>
+        <li><a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" target="_blank" rel="noopener noreferrer">Book</a></li>
       </ul>
-      <a href="#booking" class="nav-cta">Book a Free Call</a>
+      <a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" class="nav-cta" target="_blank" rel="noopener noreferrer">Book a Free Call</a>
     </div>
   </nav>
   
@@ -763,7 +772,7 @@
           your first 5K or crossing a half-marathon finish line.
         </p>
         <div class="hero-actions">
-          <a href="#booking" class="btn-primary">Book a Free Intro Call</a>
+          <a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a Free Intro Call</a>
           <a href="#services" class="btn-outline">See Services</a>
         </div>
         <div class="hero-stats">
@@ -1051,7 +1060,7 @@
           Book a free 20-minute intro call. No pressure  just a conversation about your
           goals and how I can help you reach them.
         </p>
-        <a href="#booking" class="btn-primary">Book Your Free Call</a>
+        <a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Call</a>
   
         <!--
           CALENDLY EMBED  SETUP STEPS:
@@ -1091,7 +1100,7 @@
       <ul class="footer-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#booking">Book Now</a></li>
+        <li><a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" target="_blank" rel="noopener noreferrer">Book Now</a></li>
       </ul>
     </div>
   </footer>
