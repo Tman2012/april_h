@@ -10,10 +10,15 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
     <script type="text/javascript">
       function openCalendly(event) {
-        event.preventDefault();
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/arrivamexico/demo-consultation?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0d0d0d&text_color=f2f2f2&primary_color=e8581f'
-        });
+        const bookingUrl = event.currentTarget.href;
+        if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+          event.preventDefault();
+          window.Calendly.initPopupWidget({
+            url: 'https://calendly.com/arrivamexico/demo-consultation?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0d0d0d&text_color=f2f2f2&primary_color=e8581f'
+          });
+          return;
+        }
+        window.location.assign(bookingUrl);
       }
     </script>
     <style>
