@@ -40,6 +40,22 @@
         line-height: 1.65;
         -webkit-font-smoothing: antialiased;
       }
+
+      .demo-banner {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 200;
+        background: var(--accent);
+        color: #fff;
+        padding: .35rem 1rem;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .16em;
+        line-height: 1.3;
+        text-transform: uppercase;
+      }
   
       h1, h2, h3, h4 {
         font-family: 'Montserrat', sans-serif;
@@ -63,7 +79,7 @@
       ============================================================ */
       nav {
         position: fixed;
-        inset-block-start: 0;
+        inset-block-start: 2rem;
         inset-inline: 0;
         z-index: 100;
         background: rgba(13,13,13,0.88);
@@ -700,6 +716,8 @@
     </style>
   </head>
   <body>
+
+  <div class="demo-banner" role="status">Demo site only</div>
   
   <!-- ============================================================
        NAV
@@ -737,7 +755,7 @@
         </div>
         <div class="hero-stats">
           <div>
-            <div class="stat-num">5K�HM</div>
+            <div class="stat-num">5K-HM</div>
             <div class="stat-label">Distance Range</div>
           </div>
           <div>
@@ -752,20 +770,7 @@
       </div>
   
       <div class="hero-image-wrap">
-        <!--
-          PHOTO: Replace the placeholder div below with:
-          <img src="your-hero-photo.jpg" alt="April Hargis running" />
-          Recommended size: 900�1180px, portrait orientation.
-        -->
-        <div class="hero-image-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0
-                 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0
-                 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <p>Replace with a high-quality running photo of April</p>
-        </div>
+        <img src="assets/april-hargis.jpg" alt="April Hargis running" />
       </div>
   
     </div>
@@ -880,7 +885,7 @@
       <div class="section-header">
         <span class="section-tag">Who I Coach</span>
         <h2>You Belong Here</h2>
-        <p>I work with runners at every stage  including those who don't think they're "real" runners yet.</p>
+        <p>I work with runners at every stage - including those who don't think they're "real" runners yet.</p>
       </div>
   
       <div class="helps-grid">
@@ -941,17 +946,7 @@
     <div class="container about-grid">
   
       <div class="about-image-wrap">
-        <!--
-          PHOTO: Replace the placeholder div below with:
-          <img src="april-about.jpg" alt="April Hargis, running coach" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" />
-        -->
-        <div class="about-image-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-          </svg>
-          <p>Replace with a photo of April</p>
-        </div>
+        <img src="assets/april-hargis-about.jpg" alt="April Hargis, running coach" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" />
       </div>
   
       <div class="about-content">
@@ -1018,17 +1013,14 @@
           </iframe>
         -->
   
-        <!-- Remove this placeholder div once a real embed is in place -->
-        <div class="video-placeholder">
-          <div class="play-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-          <p>Paste your YouTube or Vimeo iframe here</p>
-        </div>
-  
-        <p class="video-caption">Replace the placeholder above with your YouTube or Vimeo embed code.</p>
+        <iframe class="video-frame" style="display:block;"
+          src="https://www.youtube.com/embed/Qzw8LuUsKJ4"
+          title="On | Dear running, this run is dedicated to you."
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </section>
