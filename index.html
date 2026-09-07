@@ -7,17 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">
-      window.openCalendly = function(event) {
-        if (window.Calendly) {
-          event.preventDefault();
-          Calendly.initPopupWidget({
-            url: 'https://calendly.com/arrivamexico/demo-consultation?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0d0d0d&text_color=f2f2f2&primary_color=e8581f'
-          });
-        }
-      };
-    </script>
     <style>
   
       /* ============================================================
@@ -726,7 +715,7 @@
   
     </style>
   </head>
-  <body>
+  <body id="top">
 
   <div class="demo-banner" role="status">Demo site only</div>
   
@@ -735,14 +724,14 @@
   ============================================================ -->
   <nav>
     <div class="container nav-inner">
-      <div class="nav-logo">April <span>Hargis</span></div>
+      <a href="#top" class="nav-logo">April <span>Hargis</span></a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#who">Who I Help</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" target="_blank" rel="noopener noreferrer">Book</a></li>
+        <li><a href="https://calendly.com/arrivamexico/demo-consultation" target="_blank" rel="noopener noreferrer">Book</a></li>
       </ul>
-      <a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" class="nav-cta" target="_blank" rel="noopener noreferrer">Book a Free Call</a>
+      <a href="https://calendly.com/arrivamexico/demo-consultation" class="nav-cta" target="_blank" rel="noopener noreferrer">Book a Free Call</a>
     </div>
   </nav>
   
@@ -761,7 +750,7 @@
           your first 5K or crossing a half-marathon finish line.
         </p>
         <div class="hero-actions">
-          <a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a Free Intro Call</a>
+          <a href="https://calendly.com/arrivamexico/demo-consultation" class="btn-primary" target="_blank" rel="noopener noreferrer">Book a Free Intro Call</a>
           <a href="#services" class="btn-outline">See Services</a>
         </div>
         <div class="hero-stats">
@@ -1049,7 +1038,7 @@
           Book a free 20-minute intro call. No pressure  just a conversation about your
           goals and how I can help you reach them.
         </p>
-        <a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Call</a>
+        <a href="https://calendly.com/arrivamexico/demo-consultation" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Call</a>
   
         <!--
           CALENDLY EMBED  SETUP STEPS:
@@ -1084,12 +1073,12 @@
   ============================================================ -->
   <footer>
     <div class="container footer-inner">
-      <div class="footer-logo">April <span>Hargis</span></div>
+      <a href="#top" class="footer-logo">April <span>Hargis</span></a>
       <p>&copy; 2026 April Hargis Coaching. All rights reserved.</p>
       <ul class="footer-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="https://calendly.com/arrivamexico/demo-consultation" onclick="openCalendly(event)" target="_blank" rel="noopener noreferrer">Book Now</a></li>
+        <li><a href="https://calendly.com/arrivamexico/demo-consultation" target="_blank" rel="noopener noreferrer">Book Now</a></li>
       </ul>
     </div>
   </footer>
