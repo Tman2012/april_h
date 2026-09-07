@@ -25,6 +25,27 @@
       /* ============================================================
          CUSTOM PROPERTIES
       ============================================================ */
+      :root {
+        --bg:          #0d0d0d;
+        --surface:     #161616;
+        --surface-2:   #1f1f1f;
+        --accent:      #e8581f;
+        --accent-glow: #e8581f30;
+        --text:        #f2f2f2;
+        --muted:       #909090;
+        --border:      #272727;
+        --radius:      8px;
+        --max-w:       1100px;
+        --py:          5rem;
+      }
+
+      /* ============================================================
+        RESET & BASE
+      ============================================================ */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+
+      body {
         background: var(--bg);
         color: var(--text);
         font-family: 'Inter', sans-serif;
