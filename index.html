@@ -7,32 +7,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        Calendly.initBadgeWidget({
+          url: 'https://calendly.com/arrivamexico/demo-consultation?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0d0d0d&text_color=f2f2f2&primary_color=e8581f',
+          text: 'Schedule time with me',
+          color: '#161616',
+          textColor: '#e8581f',
+          branding: true
+        });
+      };
+    </script>
     <style>
   
       /* ============================================================
          CUSTOM PROPERTIES
       ============================================================ */
-      :root {
-        --bg:          #0d0d0d;
-        --surface:     #161616;
-        --surface-2:   #1f1f1f;
-        --accent:      #e8581f;
-        --accent-glow: #e8581f30;
-        --text:        #f2f2f2;
-        --muted:       #909090;
-        --border:      #272727;
-        --radius:      8px;
-        --max-w:       1100px;
-        --py:          5rem;
-      }
-  
-      /* ============================================================
-         RESET & BASE
-      ============================================================ */
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html { scroll-behavior: smooth; }
-  
-      body {
         background: var(--bg);
         color: var(--text);
         font-family: 'Inter', sans-serif;
@@ -1061,10 +1053,7 @@
             src="https://assets.calendly.com/assets/external/widget.js" async>
           </script>
         -->
-        <!-- Calendly inline widget begin -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/arrivamexico/demo-consultation?primary_color=e8581f" style="min-width:320px;height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        <!-- Calendly inline widget end -->
+        <p class="calendly-badge-note">Use the scheduling button to choose a time that works for you.</p>
   
       </div>
     </div>
