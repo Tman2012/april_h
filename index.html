@@ -64,6 +64,56 @@
         line-height: 1.3;
         text-transform: uppercase;
       }
+
+      .install-banner {
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 300;
+        display: none;
+        align-items: center;
+        gap: .85rem;
+        max-width: 420px;
+        margin: 0 auto;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: .85rem 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      }
+      .install-banner.show { display: flex; }
+      .install-banner p {
+        flex: 1;
+        font-size: .82rem;
+        color: var(--text);
+        line-height: 1.4;
+      }
+      .install-banner strong { color: var(--accent); }
+      .install-banner-actions { display: flex; align-items: center; gap: .5rem; }
+      .install-banner-btn {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: .5rem .9rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .install-banner-close {
+        background: none;
+        border: none;
+        color: var(--muted);
+        font-size: 1.1rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: .25rem;
+      }
   
       h1, h2, h3, h4 {
         font-family: 'Montserrat', sans-serif;
@@ -726,6 +776,14 @@
   <body id="top">
 
   <div class="demo-banner" role="status">Demo site only</div>
+
+  <div id="installBanner" class="install-banner" role="dialog" aria-label="Install app">
+    <p id="installBannerText"><strong>Add to Home Screen</strong> for quick, app-like access.</p>
+    <div class="install-banner-actions">
+      <button id="installBannerBtn" class="install-banner-btn" type="button">Install</button>
+      <button id="installBannerClose" class="install-banner-close" type="button" aria-label="Dismiss">&times;</button>
+    </div>
+  </div>
   
   <!-- ============================================================
        NAV
@@ -1097,6 +1155,59 @@
         navigator.serviceWorker.register('sw.js');
       });
     }
+  </script>
+
+  <script>
+    (function () {
+      const DISMISS_KEY = 'installBannerDismissed';
+      const banner = document.getElementById('installBanner');
+      const text = document.getElementById('installBannerText');
+      const installBtn = document.getElementById('installBannerBtn');
+      const closeBtn = document.getElementById('installBannerClose');
+
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+        || window.navigator.standalone === true;
+      const isIos = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
+      const alreadyDismissed = localStorage.getItem(DISMISS_KEY) === '1';
+
+      if (isStandalone || alreadyDismissed) return;
+
+      let deferredPrompt;
+
+      function showBanner() {
+        banner.classList.add('show');
+      }
+
+      function dismiss() {
+        banner.classList.remove('show');
+        localStorage.setItem(DISMISS_KEY, '1');
+      }
+
+      closeBtn.addEventListener('click', dismiss);
+
+      if (isIos) {
+        // No native install prompt on iOS Safari, so show manual instructions.
+        text.innerHTML = '<strong>Add to Home Screen:</strong> tap Share, then "Add to Home Screen".';
+        installBtn.style.display = 'none';
+        showBanner();
+      } else {
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+          showBanner();
+        });
+
+        installBtn.addEventListener('click', async () => {
+          if (!deferredPrompt) return;
+          deferredPrompt.prompt();
+          await deferredPrompt.userChoice;
+          deferredPrompt = null;
+          dismiss();
+        });
+
+        window.addEventListener('appinstalled', dismiss);
+      }
+    })();
   </script>
 
   </body>
